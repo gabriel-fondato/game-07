@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://tjvfs6sas8xm"]
+
+[ext_resource type="Script" uid="uid://b73nu1s2kvuul" path="res://resources/projetileResource.gd" id="1_kavns"]
+
+[resource]
+script = ExtResource("1_kavns")
+enemyBounceChance = null

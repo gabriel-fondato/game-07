@@ -3,22 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://c6enf5m0l0id4" path="res://entities/player.tscn" id="1_7nptk"]
 [ext_resource type="Script" uid="uid://dkwxmvknvghko" path="res://scripts/player.gd" id="2_ipuqq"]
 [ext_resource type="PackedScene" uid="uid://dxeec70o34wbh" path="res://entities/obstacle.tscn" id="3_h5xqe"]
-[ext_resource type="PackedScene" uid="uid://b46crk3cu1utc" path="res://entities/projectile.tscn" id="4_5gm6p"]
+[ext_resource type="PackedScene" uid="uid://nql1aghvvuh7" path="res://entities/bullet.tscn" id="4_5gm6p"]
+[ext_resource type="Resource" uid="uid://p26o67cj04gm" path="res://projectiles/default.tres" id="4_cela1"]
 
 [node name="inGame" type="Node2D" unique_id=918992950]
 
 [node name="Player" parent="." unique_id=1770683281 instance=ExtResource("1_7nptk")]
 script = ExtResource("2_ipuqq")
-SPEED = null
-ACCELERATION = null
-ROTATION_SPEED = null
-PUSH_OBJECTS_FORCE = null
-player_should_move = null
+projectileScene = ExtResource("4_5gm6p")
+projectileData = ExtResource("4_cela1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1007328721]
 
 [node name="obstacle" parent="." unique_id=955333568 instance=ExtResource("3_h5xqe")]
 position = Vector2(-166, 32)
 
-[node name="Projectile" parent="." unique_id=769219677 instance=ExtResource("4_5gm6p")]
-position = Vector2(-122, -87)
+[node name="Projectile2" parent="." unique_id=1923219692 instance=ExtResource("4_5gm6p")]
+position = Vector2(-338, 247)

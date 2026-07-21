@@ -30,3 +30,16 @@ func _push_objects() -> void:
 		var collision := get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
 			collision.get_collider().apply_central_impulse(-collision.get_normal() * PUSH_OBJECTS_FORCE)
+			
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fire"):
+		shoot()
+
+func shoot() -> void:
+	var proj := projectileScene.instantiate()
+	#proj.data =                       # assign data FIRST
+	
+	proj.direction = Vector2.RIGHT.rotated(rotation)
+	proj.direction = rotation
+	proj.global_position = global_position
+	get_tree().current_scene.add_child(proj) 
