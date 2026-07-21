@@ -1,8 +1,13 @@
 [gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://p26o67cj04gm"]
 
 [ext_resource type="Script" uid="uid://b73nu1s2kvuul" path="res://resources/projetileResource.gd" id="1_dabsp"]
+[ext_resource type="Texture2D" uid="uid://j7mhhbylpbou" path="res://sprites/projectiles/white.png" id="2_reqi0"]
 
 [resource]
 script = ExtResource("1_dabsp")
+name = "default projectile"
+speed = 150.0
+lifetime = 3.0
+sprite_texture = ExtResource("2_reqi0")
 enemyBounceChance = null
 metadata/_custom_type_script = "uid://b73nu1s2kvuul"

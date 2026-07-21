@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c6enf5m0l0id4"]
 
+[ext_resource type="Script" uid="uid://dkwxmvknvghko" path="res://scripts/player.gd" id="1_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://bib2jgsa8o5sb" path="res://icon.svg" id="1_merdl"]
+[ext_resource type="PackedScene" uid="uid://nql1aghvvuh7" path="res://entities/bullet.tscn" id="2_rfe5m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
@@ -10,6 +12,8 @@ slide_on_ceiling = false
 floor_stop_on_slope = false
 platform_on_leave = 2
 platform_floor_layers = 4294967294
+script = ExtResource("1_b0kkn")
+projectileScene = ExtResource("2_rfe5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575552189]
 shape = SubResource("CircleShape2D_g4v7s")

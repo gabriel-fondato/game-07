@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://jqxydopxu2fc"]
+
+[ext_resource type="Script" uid="uid://cno1s3w32dxes" path="res://scripts/enemy_spawner.gd" id="1_yc84l"]
+[ext_resource type="Script" uid="uid://b2janlsftneex" path="res://resources/enemyResource.gd" id="2_n0kdd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="enemySpawner" type="Node2D" unique_id=2057447479]
+script = ExtResource("1_yc84l")
+possibleEnemies = Array[ExtResource("2_n0kdd")]([null])
+cooldownTime = 0.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1358481983]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=343538945]
+shape = SubResource("CircleShape2D_g4v7s")

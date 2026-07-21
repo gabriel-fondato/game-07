@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://4wgnn0j3kyty"]
 
 [ext_resource type="PackedScene" uid="uid://c6enf5m0l0id4" path="res://entities/player.tscn" id="1_7nptk"]
-[ext_resource type="Script" uid="uid://dkwxmvknvghko" path="res://scripts/player.gd" id="2_ipuqq"]
 [ext_resource type="PackedScene" uid="uid://dxeec70o34wbh" path="res://entities/obstacle.tscn" id="3_h5xqe"]
-[ext_resource type="PackedScene" uid="uid://nql1aghvvuh7" path="res://entities/bullet.tscn" id="4_5gm6p"]
 [ext_resource type="Resource" uid="uid://p26o67cj04gm" path="res://projectiles/default.tres" id="4_cela1"]
+[ext_resource type="Script" uid="uid://b73nu1s2kvuul" path="res://resources/projetileResource.gd" id="4_or4b6"]
+[ext_resource type="Resource" uid="uid://b73p28ysl0e6a" path="res://projectiles/tier2.tres" id="6_6nh0b"]
+[ext_resource type="Resource" uid="uid://bv1dequg6u4km" path="res://projectiles/tier3.tres" id="7_6nh0b"]
+[ext_resource type="PackedScene" uid="uid://jqxydopxu2fc" path="res://entities/enemySpawner.tscn" id="7_r6ttu"]
+[ext_resource type="PackedScene" uid="uid://er1bm6nlw1al" path="res://entities/enemy.tscn" id="8_r6ttu"]
 
 [node name="inGame" type="Node2D" unique_id=918992950]
-
-[node name="Player" parent="." unique_id=1770683281 instance=ExtResource("1_7nptk")]
-script = ExtResource("2_ipuqq")
-projectileScene = ExtResource("4_5gm6p")
-projectileData = ExtResource("4_cela1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1007328721]
 
 [node name="obstacle" parent="." unique_id=955333568 instance=ExtResource("3_h5xqe")]
 position = Vector2(-166, 32)
 
-[node name="Projectile2" parent="." unique_id=1923219692 instance=ExtResource("4_5gm6p")]
-position = Vector2(-338, 247)
+[node name="Player" parent="." unique_id=1770683281 instance=ExtResource("1_7nptk")]
+position = Vector2(47, 15)
+projectileTypes = Array[ExtResource("4_or4b6")]([ExtResource("4_cela1"), ExtResource("6_6nh0b"), ExtResource("7_6nh0b")])
+
+[node name="enemySpawner" parent="." unique_id=2057447479 instance=ExtResource("7_r6ttu")]
+enemyScene = ExtResource("8_r6ttu")

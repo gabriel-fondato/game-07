@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dxeec70o34wbh"]
 
+[ext_resource type="Script" uid="uid://bcyo4e6c7rsfd" path="res://scripts/obstacle.gd" id="1_70f0i"]
 [ext_resource type="Texture2D" uid="uid://bib2jgsa8o5sb" path="res://icon.svg" id="1_yqsfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
@@ -9,6 +10,7 @@ size = Vector2(128, 128)
 gravity_scale = 0.0
 linear_damp = 1.0
 angular_damp = 0.5
+script = ExtResource("1_70f0i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446515980]
 shape = SubResource("RectangleShape2D_g4v7s")

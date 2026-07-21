@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cjp8hyu2jmnbk"]
+
+[ext_resource type="Script" uid="uid://b2janlsftneex" path="res://resources/enemyResource.gd" id="1_8wvg5"]
+[ext_resource type="Texture2D" uid="uid://cmllxnrs7eyki" path="res://sprites/enemy.png" id="2_u734w"]
+
+[resource]
+script = ExtResource("1_8wvg5")
+name = "default enemy"
+sprite = ExtResource("2_u734w")
+metadata/_custom_type_script = "uid://b2janlsftneex"

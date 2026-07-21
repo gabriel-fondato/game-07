@@ -2,6 +2,7 @@
 extends Resource
 class_name ProjectileData
 
+@export var name: = "projectile"
 @export var speed: float = 300.0
 @export var damage: int = 10
 @export var cooldown: float = 1

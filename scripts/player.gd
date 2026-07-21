@@ -6,12 +6,16 @@ extends CharacterBody2D
 @export var PUSH_OBJECTS_FORCE := 20.0
 @export var player_should_move := true
 @export var projectileScene : PackedScene
-@export var projectileData: ProjectileData
+@export var projectileTypes: Array[ProjectileData]
+var currentProjectile := 1
+var ammountOfAvaliableProjectiles := 3
 
 func _physics_process(delta: float) -> void:
 	_move_player(delta)
 	_rotate_player(delta)
 	_push_objects()
+	_projectile_switcher()
+	_check_fireButton()
 
 func _move_player(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -30,16 +34,26 @@ func _push_objects() -> void:
 		var collision := get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
 			collision.get_collider().apply_central_impulse(-collision.get_normal() * PUSH_OBJECTS_FORCE)
-			
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire"):
-		shoot()
 
 func shoot() -> void:
 	var proj := projectileScene.instantiate()
-	#proj.data =                       # assign data FIRST
-	
-	proj.direction = Vector2.RIGHT.rotated(rotation)
-	proj.direction = rotation
+	proj.data = projectileTypes.get(currentProjectile)
+	proj.rotation = rotation
+	proj.direction = Vector2.UP.rotated(rotation)
 	proj.global_position = global_position
 	get_tree().current_scene.add_child(proj) 
+	
+func _projectile_switcher() -> void:
+	ammountOfAvaliableProjectiles = projectileTypes.size()
+	if Input.is_action_just_pressed("switchWeaponRight"):
+		currentProjectile += 1
+		if currentProjectile >= ammountOfAvaliableProjectiles:
+			currentProjectile = 0
+	if Input.is_action_just_pressed("switchWeaponLeft"):
+		currentProjectile -= 1
+		if currentProjectile < 0:
+			currentProjectile = ammountOfAvaliableProjectiles - 1
+	
+func _check_fireButton() -> void:
+	if Input.is_action_pressed("fire1"):
+		shoot()

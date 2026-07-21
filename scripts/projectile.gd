@@ -10,9 +10,6 @@ var velocity: Vector2
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
-	if not data:
-		push_warning("Projectile spawned with no data assigned!")
-		return
 
 	velocity = direction.normalized() * data.speed
 	sprite.texture = data.sprite_texture
@@ -30,8 +27,8 @@ func _on_body_entered(body: Node2D) -> void:
 		body.take_damage(data.damage)
 	if data.explosion_radius > 0:
 		_explode()
-	if not data.piercing:
-		queue_free()
+	#if not data.piercing:
+	#	queue_free()
 
 func _explode() -> void:
 	# TODO: query bodies in data.explosion_radius and apply damage/knockback

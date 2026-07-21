@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://b73p28ysl0e6a"]
+
+[ext_resource type="Script" uid="uid://b73nu1s2kvuul" path="res://resources/projetileResource.gd" id="1_gjqxh"]
+[ext_resource type="Texture2D" uid="uid://dxc2hubveixff" path="res://sprites/projectiles/yellow.png" id="2_dukxd"]
+
+[resource]
+script = ExtResource("1_gjqxh")
+name = "tier 2 projectile"
+damage = 50
+lifetime = 3.0
+sprite_texture = ExtResource("2_dukxd")
+enemyBounceChance = null
+metadata/_custom_type_script = "uid://b73nu1s2kvuul"

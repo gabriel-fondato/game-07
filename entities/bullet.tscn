@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://nql1aghvvuh7"]
 
 [ext_resource type="Script" uid="uid://b5na2nmpcfda1" path="res://scripts/projectile.gd" id="1_opdhh"]
-[ext_resource type="Texture2D" uid="uid://bib2jgsa8o5sb" path="res://icon.svg" id="2_opdhh"]
+[ext_resource type="Texture2D" uid="uid://j7mhhbylpbou" path="res://sprites/projectiles/white.png" id="2_opdhh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j06he"]
-size = Vector2(14, 35)
+[sub_resource type="CircleShape2D" id="CircleShape2D_or4b6"]
+radius = 7.0
 
 [node name="Projectile" type="Area2D" unique_id=1669105403]
 script = ExtResource("1_opdhh")
@@ -12,10 +12,8 @@ script = ExtResource("1_opdhh")
 [node name="sprite" type="Sprite2D" parent="." unique_id=459879534]
 modulate = Color(1.366, 1.366, 1.366, 0.906)
 texture_filter = 2
-rotation = 3.1415927
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.86, 0.86)
 texture = ExtResource("2_opdhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288966425]
-position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_j06he")
+shape = SubResource("CircleShape2D_or4b6")
