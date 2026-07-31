@@ -21,3 +21,8 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1929989127]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_merdl")
+
+[node name="weaponCooldownTimer" type="Timer" parent="." unique_id=117702191]
+one_shot = true
+
+[connection signal="timeout" from="weaponCooldownTimer" to="." method="_on_weapon_cooldown_timer_timeout"]

@@ -7,14 +7,15 @@ extends CharacterBody2D
 @export var player_should_move := true
 @export var projectileScene : PackedScene
 @export var projectileTypes: Array[ProjectileData]
-var currentProjectile := 1
+var currentProjectile := 0
 var ammountOfAvaliableProjectiles := 3
+var canShoot := true
 
 func _physics_process(delta: float) -> void:
 	_move_player(delta)
 	_rotate_player(delta)
 	_push_objects()
-	_projectile_switcher()
+#	_projectile_switcher()
 	_check_fireButton()
 
 func _move_player(delta: float) -> void:
@@ -41,7 +42,9 @@ func shoot() -> void:
 	proj.rotation = rotation
 	proj.direction = Vector2.UP.rotated(rotation)
 	proj.global_position = global_position
-	get_tree().current_scene.add_child(proj) 
+	get_tree().current_scene.add_child(proj)
+	canShoot = false
+	$weaponCooldownTimer.start(proj.data.cooldown)
 	
 func _projectile_switcher() -> void:
 	ammountOfAvaliableProjectiles = projectileTypes.size()
@@ -55,5 +58,9 @@ func _projectile_switcher() -> void:
 			currentProjectile = ammountOfAvaliableProjectiles - 1
 	
 func _check_fireButton() -> void:
-	if Input.is_action_pressed("fire1"):
+	if Input.is_action_pressed("fire1") and canShoot:
 		shoot()
+		
+
+func _on_weapon_cooldown_timer_timeout() -> void:
+	canShoot = true
