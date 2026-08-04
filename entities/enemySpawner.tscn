@@ -14,3 +14,5 @@ cooldownTime = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=343538945]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=1188574084]

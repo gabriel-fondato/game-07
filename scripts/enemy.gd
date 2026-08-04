@@ -19,10 +19,13 @@ func _physics_process(delta: float) -> void:
 func _move() -> void:
 	direction = -position - Vector2.ZERO
 	print("linear velocity: ", linear_velocity)
-	if (linear_velocity.x < data.maxAceleration or linear_velocity.y < data.maxAceleration):
+	if (linear_velocity.x < data.maxAceleration or linear_velocity.y < data.maxAceleration or linear_velocity.x < -data.maxAceleration or linear_velocity.y < -data.maxAceleration):
 		apply_central_force(direction.normalized() * data.speed)
 	else:
 		apply_central_force(-linear_velocity.normalized())
 	
 func _checkIfIsOnCenter() -> void:
 	print(position)
+	
+func take_damage(damage) -> void:
+	queue_free()

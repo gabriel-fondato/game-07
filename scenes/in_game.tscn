@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://jqxydopxu2fc" path="res://entities/enemySpawner.tscn" id="7_r6ttu"]
 [ext_resource type="PackedScene" uid="uid://er1bm6nlw1al" path="res://entities/enemy.tscn" id="8_r6ttu"]
 [ext_resource type="Resource" uid="uid://cjp8hyu2jmnbk" path="res://enemies/default.tres" id="9_lohkw"]
+[ext_resource type="Script" uid="uid://b2janlsftneex" path="res://resources/enemyResource.gd" id="9_rtblr"]
 
 [node name="inGame" type="Node2D" unique_id=918992950]
 
@@ -23,6 +24,9 @@ projectileTypes = Array[ExtResource("4_or4b6")]([ExtResource("4_cela1"), ExtReso
 
 [node name="enemySpawner" parent="." unique_id=2057447479 instance=ExtResource("7_r6ttu")]
 enemyScene = ExtResource("8_r6ttu")
+possibleEnemies = Array[ExtResource("9_rtblr")]([ExtResource("9_lohkw")])
+cooldownTime = 1.0
+enemyAmount = 1000
 
 [node name="Enemy" parent="." unique_id=818896511 instance=ExtResource("8_r6ttu")]
 position = Vector2(167, 18)
