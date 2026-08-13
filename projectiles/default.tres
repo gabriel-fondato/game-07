@@ -10,5 +10,7 @@ speed = 150.0
 damage = 1
 lifetime = 3.0
 sprite_texture = ExtResource("2_reqi0")
+piercing = true
+pierceLevel = 2
 enemyBounceChance = null
 metadata/_custom_type_script = "uid://b73nu1s2kvuul"

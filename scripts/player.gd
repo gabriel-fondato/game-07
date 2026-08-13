@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var player_should_move := true
 @export var projectileScene : PackedScene
 @export var projectileTypes: Array[ProjectileData]
-var currentProjectile := 2
+var currentProjectile := 1
 var ammountOfAvaliableProjectiles := 3
 var canShoot := true
 
